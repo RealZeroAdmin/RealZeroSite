@@ -1,0 +1,38 @@
+---
+import "../styles/global.css";
+
+const { title } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+    <meta name="viewport" content="width=device-width" />
+  </head>
+  <body>
+    <header>
+      <nav>
+	<a href"/" class="brand">
+	  <img src="/logo4.png" alt="RealZero logo" />
+	</a>	
+
+	<strong> Real Zero Secretariat</strong>
+	<span style="flex: 1"></span>
+        <a href="/home">Home</a>
+        <a href="/research">Research</a>
+        <a href="/about">About</a>
+	<a href="/people">People</a>
+        <a href="/news">News</a>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <p>© 2026 Real Zero Secretariat</p>
+    </footer>
+  </body>
+</html>

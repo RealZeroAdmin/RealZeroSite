@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+import MainLayout from "../layouts/MainLayout.astro";
+
+const people = await getCollection("people");
+
+// Optional: sort by order
+people.sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999));
+---
+
+<MainLayout title="People">
+  <h1>People</h1>
+
+  <p>
+    Our work is carried out by an interdisciplinary team of researchers,
+    analysts, and advisors.
+  </p>
+
+  <div class="people-grid">
+    {people.map((person) => (
+      <div class="person-card">
+        <img
+          src={person.data.photo}
+          alt={`Photo of ${person.data.name}`}
+        />
+
+        <h3>{person.data.name}</h3>
+        <p class="meta">{person.data.role}</p>
+
+        <p>{person.body}</p>
+      </div>
+    ))}
+  </div>
+</MainLayout>
+
