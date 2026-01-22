@@ -11,7 +11,7 @@ We publish original research focused on actionable climate policy.
 ## Recent reports
 
 - **Decarbonising The World (2026)**  
-  [Download PDF](/public/test.pdf)
+  [Download PDF](/test.pdf)
 
 ## Methods
 
